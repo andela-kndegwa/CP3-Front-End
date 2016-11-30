@@ -3,9 +3,10 @@
         <div class='container-fluid'>
             <a [routerLink]="['/welcome']" class='navbar-brand'> {{title}}</a>
             <ul class='nav navbar-nav'>
-                <li><a [routerLink]="['/login']"> Log In</a></li>
-                <li><a [routerLink]="['/register']"> Register </a></li>
-                <li><a [routerLink]="['/bucketlists']"> My bucketlists </a></li>
+                <li><a *ngIf="!auth.loggedIn()" [routerLink]="['/login']"> Log In</a></li>
+                <li><a *ngIf="!auth.loggedIn()" [routerLink]="['/register']"> Register </a></li>
+                <li><a *ngIf="auth.loggedIn()" [routerLink]="['/dashboard']"> Dashboard</a></li>
+                <li><a *ngIf="auth.loggedIn()"  (click)='logOut()' > Log Out</a></li>
             </ul>
         </div>
     </nav>

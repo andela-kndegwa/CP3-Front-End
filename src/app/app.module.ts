@@ -11,9 +11,11 @@ import { LandingComponent } from './landing/landing.component';
 
 import {BucketlistsModule } from './bucketlists/bucketlists.module';
 
-import { AUTH_PROVIDERS, JwtHelper } from 'angular2-jwt';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 import { AuthGuard } from './common/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {AuthService } from './accounts/auth.service';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { AuthGuard } from './common/auth.guard';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    LandingComponent
+    LandingComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -31,10 +34,11 @@ import { AuthGuard } from './common/auth.guard';
       {path: 'register', component:RegisterComponent},
       {path: 'login', component:LoginComponent},
       {path: 'welcome', component:LandingComponent},
+      {path: 'dashboard', component:DashboardComponent, canActivate : [AuthGuard]},
       ]),
     BucketlistsModule,
   ],
-  providers: [AUTH_PROVIDERS, JwtHelper],
+  providers: [AUTH_PROVIDERS, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
