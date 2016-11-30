@@ -22,7 +22,6 @@ export class LoginComponent {
         response => {
           localStorage.setItem('token', response.json().token);
           this.router.navigate(['/bucketlists']);
-          console.log(localStorage.getItem('token'));
         },
         error => {
           this.login_errors = true;
