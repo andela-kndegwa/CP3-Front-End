@@ -21,7 +21,7 @@ export class LoginComponent {
       .subscribe(
         response => {
           localStorage.setItem('token', response.json().token);
-          this.router.navigate(['/bucketlists']);
+          this.router.navigate(['/dashboard']);
         },
         error => {
           this.login_errors = true;
