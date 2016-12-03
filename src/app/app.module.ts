@@ -9,13 +9,14 @@ import { LoginComponent } from './accounts/login/login.component';
 import { RegisterComponent } from './accounts/register/register.component';
 import { LandingComponent } from './landing/landing.component';
 
-import {BucketlistsModule } from './bucketlists/bucketlists.module';
+import { BucketlistsModule } from './bucketlists/bucketlists.module';
 
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 import { AuthGuard } from './common/auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {AuthService } from './accounts/auth.service';
+import { AuthService } from './accounts/auth.service';
+
 
 
 @NgModule({
@@ -24,18 +25,18 @@ import {AuthService } from './accounts/auth.service';
     LoginComponent,
     RegisterComponent,
     LandingComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      {path: 'register', component:RegisterComponent},
-      {path: 'login', component:LoginComponent},
-      {path: 'welcome', component:LandingComponent},
-      {path: 'dashboard', component:DashboardComponent, canActivate : [AuthGuard]},
-      ]),
+      { path: 'register', component: RegisterComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'welcome', component: LandingComponent },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    ]),
     BucketlistsModule,
   ],
   providers: [AUTH_PROVIDERS, AuthService],
