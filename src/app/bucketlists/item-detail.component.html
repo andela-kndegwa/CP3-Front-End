@@ -1,0 +1,61 @@
+
+<div class='panel panel-primary' *ngIf='item'>
+    <div class='panel-heading' style='font-size:large'>
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{item.name}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Description:</div>
+                    <div class='col-md-6'>{{item.description}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Created on</div>
+                    <div class='col-md-6'>{{item.created_on}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Modified On</div>
+                    <div class='col-md-6'>{{item.modfied_on}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Status:</div>
+                    <div class='col-md-6'>{{item.is_done}}</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <form role="form" (submit)="updateBucketListItem()">
+        <h3> Update Bucket List</h3>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="item.name">
+      </div>
+        <div class="form-group">
+        <label for="name">Status</label>
+        <input type="text" name="is_done" [(ngModel)]="item.is_done">
+      </div>
+      <button type="submit" class="btn btn-default">Edit</button>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+       <button type="submit" (click)="deleteBucketListItem(b_id, item_id)" class="btn btn-default">Delete</button> 
+    </div>
+</div>

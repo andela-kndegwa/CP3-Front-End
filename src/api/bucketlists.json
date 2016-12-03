@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Leaf Rake",
+        "description": "Leaf rake with 48-inch wooden handle.",
+        "created_on": "March 19, 2016",
+        "modified_on": "March 24, 2016",
+        "user_id": 2,
+        "items": ""
+    },
+    {
+        "id": 2,
+        "name": "Basket Ball",
+        "description": "basketball with 48-inch wooden handle.",
+        "created_on": "March 19, 2016",
+        "modified_on": "March 24, 2016",
+        "user_id": 1,
+        "items": ""
+    },
+    {
+        "id": 3,
+        "name": "Hair Line",
+        "description": "hAIR LINE with 48-inch wooden handle.",
+        "created_on": "March 19, 2016",
+        "modified_on": "March 24, 2016",
+        "user_id": 3,
+        "items": ""
+    },
+    {
+        "id": 4,
+        "name": "Reefer",
+        "description": "OG Kush with 48-inch wooden handle.",
+        "created_on": "March 19, 2016",
+        "modified_on": "March 24, 2016",
+        "user_id": 3,
+        "items": ""
+    },
+    {
+        "id": 5,
+        "name": "Ambasaddeur",
+        "description": "Ambasadeur with 48-inch wooden handle.",
+        "created_on": "March 19, 2016",
+        "modified_on": "March 24, 2016",
+        "user_id": 4,
+        "items": ""
+    }
+]
