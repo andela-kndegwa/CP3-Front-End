@@ -8,9 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  title = ' Zuhura';
   constructor(private auth: AuthService, private router:Router ){}
-  title = 'Zuhura';
 
   logOut(){
       localStorage.removeItem('token');

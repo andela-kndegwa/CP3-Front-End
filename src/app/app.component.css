@@ -1,0 +1,60 @@
+body{
+    /*padding-top : 80px;*/
+}
+
+img {
+    width:70%;
+    margin-bottom: 0;
+    border-top:50px;
+}
+.navbar {
+    margin-top:0;
+    margin-bottom: 0;
+    background-color: #db3a34;
+    border-radius:0;
+    padding: 30px 15px;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    opacity: 0;
+}
+
+@media(max-width:770px){
+    .navbar img {
+        position: absolute;
+        top: 15%;
+        bottom: 0;
+        margin: 0 auto;
+        width:20%;
+
+    }
+}
+
+.navbar-brand 
+{
+    padding: 0;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #F2CD5D;
+    transition: color .3s;
+} 
+
+.cbp-af-header-shrink{
+    padding-top: 2px;
+    padding-bottom: 2px; 
+    opacity: 0.9;
+}
+.navbar-default .navbar-nav>li>a:focus
+{
+    color: #F2CD5D;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #3A1772;
+}
+
+.zh-header {
+background-color: #D741A7;
+}
+
+
+
