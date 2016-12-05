@@ -9,42 +9,22 @@
     </form>
   </div>
 </div>
-<div class='panel panel-primary'>
-  <div class='panel-heading'>
-    Bucket Lists
-  </div>
-  <div class='panel-body'>
-    <div class="row">
-      <div class="col-md-4">
-      </div>
-    </div>
-    <div class='table-responsive'>
-      <table class='table'>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Date Created</th>
-            <th>Date Modified</th>
-            <th>Link</th>
-            <th>Owner</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let bucketlist of bucketlists '>
-            <td><a [routerLink]="['/bucketlist', bucketlist.id ]">{{bucketlist.name}}</a></td>
-            <td>{{bucketlist.description | lowercase}}</td>
-            <td>{{bucketlist.created_on }}</td>
-            <td>{{bucketlist.modified_on }}</td>
-            <td> <a [routerLink]="['/bucketlist',bucketlist.id,'items']">Items</a></td>
-            <td>{{bucketlist.url }}</td>
-            <td>{{bucketlist.owner }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+<!--Test Out-->
+<div class="card-block center-block" *ngFor='let bucketlist of bucketlists'>
+  <div class="single-card">
+      <span class="number">#{{bucketlist.id}}</span>
+      <br>
+      Title : {{bucketlist.name}} <br>
+      {{bucketlist.description}} <br>
+      {{bucketlist.created_on}} <br>
+      {{bucketlist.modified_on}} <br>
+      <a [routerLink]="['/bucketlist',bucketlist.id,'items']">Items</a> <br>
+      {{bucketlist.owner }} <br>
+      <button type="submit" class="button btn btn-default">
+        <a [routerLink]="['/bucketlist', bucketlist.id ]">
+        Edit </a><span class="glyphicon glyphicon-pencil"></span>
+      </button>
+      
   </div>
 </div>
-
-<router-outlet></router-outlet>
-
