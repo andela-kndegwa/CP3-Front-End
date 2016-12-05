@@ -16,6 +16,7 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { AuthGuard } from './common/auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './accounts/auth.service';
+import {routes} from './bucketlists/bucketlist.routes';
 
 
 
@@ -32,10 +33,11 @@ import { AuthService } from './accounts/auth.service';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+      ...routes,
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'welcome', component: LandingComponent },
       { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: 'welcome', component: LandingComponent },
     ]),
     BucketlistsModule,
   ],

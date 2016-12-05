@@ -12,24 +12,24 @@ const template = require('./login.component.html');
 })
 export class LoginComponent {
   login_errors = false;
-  constructor(public router:Router, public http: Http) { }
+  constructor(public router: Router, public http: Http) { }
 
-  login(event, username, password){
-      let body = JSON.stringify({username, password});
-          
-     this.http.post('https://zuhura.herokuapp.com/api/v1.0/auth/login/', body, { headers: contentHeaders })
+  login(event, username, password) {
+    let body = JSON.stringify({ username, password });
+    localStorage.setItem('currentUser', username);
+    this.http.post('https://zuhura.herokuapp.com/api/v1.0/auth/login/', body, { headers: contentHeaders })
       .subscribe(
-        response => {
-          localStorage.setItem('token', response.json().token);
-          this.router.navigate(['/dashboard']);
-        },
-        error => {
-          this.login_errors = true;
-          console.log(error.text());
-        }
+      response => {
+        localStorage.setItem('token', response.json().token);
+        this.router.navigate(['/dashboard']);
+      },
+      error => {
+        this.login_errors = true;
+        console.log(error.text());
+      }
       );
   }
-    register(event) {
+  register(event) {
     event.preventDefault();
     this.router.navigate(['register']);
   }

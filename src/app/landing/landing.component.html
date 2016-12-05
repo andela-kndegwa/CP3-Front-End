@@ -1,17 +1,17 @@
-<div class='element zh-section1 container-fluid'>
+<div class='zh-section1 container-fluid'>
   <img src='../../assets/img/zuhura-inv.png' alt="" class="img-responsive">
   <div class="midle row">
     <!-- panel-->
     <div class="col-xs-6 col-xs-push-6 text-left">
       <div class="">
-        <a class="btn">
+        <a *ngIf="!auth.loggedIn()" [routerLink]="['/register']" class="btn">
               Sign Up
           </a>
       </div>
     </div>
     <div class="col-xs-6 col-xs-pull-6 text-right">
       <div class="">
-        <a class="btn">
+        <a *ngIf="!auth.loggedIn()" [routerLink]="['/login']"class="btn">
               Log In
           </a>
       </div>

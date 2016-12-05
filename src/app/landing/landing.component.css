@@ -55,6 +55,7 @@ height: 100vh;
 .btn:hover {
     background: #f2cd5d;
     color: #fff;
+    padding: 20px 80px;
     
 }
  .center-arrow {
@@ -77,6 +78,7 @@ height: 100vh;
     background-color: #001F3F;
   }
 }
+
 
 
 

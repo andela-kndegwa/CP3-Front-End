@@ -1,21 +1,18 @@
-body{
-    /*padding-top : 80px;*/
-}
-
 img {
     width:70%;
     margin-bottom: 0;
     border-top:50px;
 }
 .navbar {
+    position: fixed;
     margin-top:0;
     margin-bottom: 0;
     background-color: #db3a34;
     border-radius:0;
     padding: 30px 15px;
-    -webkit-transition: all 0.8s;
-    transition: all 0.8s;
-    opacity: 0;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    opacity: 1;
 }
 
 @media(max-width:770px){

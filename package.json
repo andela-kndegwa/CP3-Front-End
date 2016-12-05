@@ -23,6 +23,7 @@
     "angular2-jwt": "^0.1.25",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "hover.css": "^2.0.2",
     "jquery": "^3.1.1",
     "ng2-accordion": "0.0.9",
     "ng2-bootstrap": "^1.1.16",
