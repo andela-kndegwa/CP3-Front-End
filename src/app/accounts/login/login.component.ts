@@ -17,7 +17,7 @@ export class LoginComponent {
   login(event, username, password) {
     let body = JSON.stringify({ username, password });
     localStorage.setItem('currentUser', username);
-    this.http.post('https://zuhura.herokuapp.com/api/v1.0/auth/login/', body, { headers: contentHeaders })
+    this.http.post('https://zuhura-api.herokuapp.com/api/v1.0/auth/login/', body, { headers: contentHeaders })
       .subscribe(
       response => {
         localStorage.setItem('token', response.json().token);

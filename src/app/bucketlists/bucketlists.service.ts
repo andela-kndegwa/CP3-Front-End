@@ -11,7 +11,7 @@ import { Item } from './item';
 @Injectable()
 export class BucketlistsService {
   // property of private nature
-  private _bucketlistUrl = 'https://zuhura.herokuapp.com/api/v1.0/bucketlists/';
+  private _bucketlistUrl = 'https://zuhura-api.herokuapp.com/api/v1.0/bucketlists/';
   constructor(private http: Http) { }
 
   // Get all bucket lists associated with this user

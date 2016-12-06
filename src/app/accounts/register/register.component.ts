@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   register(event, username, email, password){
       event.preventDefault();
       let body = JSON.stringify({ username, email, password });
-      this.http.post('https://zuhura.herokuapp.com/api/v1.0/auth/register/', body, { headers: contentHeaders })
+      this.http.post('https://zuhura-api.herokuapp.com/api/v1.0/auth/register/', body, { headers: contentHeaders })
       .subscribe(
         response => {
           // localStorage.setItem('', response.json().token);
