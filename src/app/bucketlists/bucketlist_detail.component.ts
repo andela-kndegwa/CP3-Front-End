@@ -7,7 +7,7 @@ import { BucketlistsService } from './bucketlists.service';
 
 @Component({
     templateUrl: './bucketlist-detail.component.html',
-    styleUrls: ['./bucketlist-detail.component.css']
+    styleUrls: ['./bucketlist-detail.component.css', '../dashboard/dashboard.component.css']
 })
 
 export class BucketListDetailComponent implements OnInit {

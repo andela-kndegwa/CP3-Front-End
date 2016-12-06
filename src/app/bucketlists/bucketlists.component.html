@@ -21,10 +21,9 @@
       {{bucketlist.modified_on}} <br>
       <a [routerLink]="['/bucketlist',bucketlist.id,'items']">Items</a> <br>
       {{bucketlist.owner }} <br>
-      <button type="submit" class="button btn btn-default">
-        <a [routerLink]="['/bucketlist', bucketlist.id ]">
-        Edit </a><span class="glyphicon glyphicon-pencil"></span>
-      </button>
+      <a class="button" [routerLink]="['/bucketlist', bucketlist.id ]">
+        Edit <span class="glyphicon glyphicon-pencil"></span></a>
+  
       
   </div>
 </div>

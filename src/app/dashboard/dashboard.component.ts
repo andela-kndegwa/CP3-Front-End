@@ -12,10 +12,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-
   goto() {
     console.log('Here');
     this._router.navigate(['./bucketlists/']);
   }
-
+   
 }

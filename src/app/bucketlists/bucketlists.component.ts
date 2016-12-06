@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 
 export class BucketlistsComponent implements OnInit {
-      errorMessage: string;
+  errorMessage: string;
   bucketlists: IBucketList[];
   newBucket: string;
 
