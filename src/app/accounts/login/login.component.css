@@ -121,3 +121,10 @@ input:focus, textarea:focus {
 .login-link {
     color: #3a1772;
 }
+
+.zh-alert {
+  background: #db3a34;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+}

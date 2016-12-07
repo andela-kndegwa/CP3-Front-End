@@ -1,6 +1,8 @@
  <div class="form center-block">
    <h1>Log In</h1>
-   <div class="alert-danger" *ngIf="login_errors">Login Error(s)</div>
+     <div class="zh-alert alert-danger" *ngFor="let err of errors">
+    <p><span class="glyphicon glyphicon-asterisk"> </span>{{err}}</p>
+    </div>
    <form role="form" (submit)="login($event, username.value, password.value)">
    <div class="form-group">
      <label for="username">Username</label>

@@ -12,9 +12,12 @@ const template = require('./login.component.html');
 })
 export class LoginComponent {
   login_errors = false;
+  error: string;
+  errors = [];
   constructor(public router: Router, public http: Http) { }
 
   login(event, username, password) {
+    this.errors = [];
     let body = JSON.stringify({ username, password });
     localStorage.setItem('currentUser', username);
     this.http.post('https://zuhura-api.herokuapp.com/api/v1.0/auth/login/', body, { headers: contentHeaders })
@@ -25,7 +28,16 @@ export class LoginComponent {
       },
       error => {
         this.login_errors = true;
-        console.log(error.text());
+        this.error = error.json();
+        let errorObj = error.json();
+        if (errorObj.hasOwnProperty('username')) {
+          this.errors.push('Username error: ' + errorObj.username[0]);
+          console.log('Username error: ' + errorObj.username[0]);
+        }
+        if (errorObj.hasOwnProperty('password')) {
+          this.errors.push('Error: Password is Required');
+        }
+        console.log(this.errors)
       }
       );
   }
