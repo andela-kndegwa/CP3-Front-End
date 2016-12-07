@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-bucketlists',
   templateUrl: './bucketlists.component.html',
-  styleUrls: ['./bucketlists.component.css']
+  styleUrls: ['./bucketlists.component.css', '../dashboard/dashboard.component.css']
 })
 
 export class BucketlistsComponent implements OnInit {

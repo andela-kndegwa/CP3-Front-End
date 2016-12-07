@@ -14,6 +14,7 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    opacity: 0.9;
 }
 
 /* The navigation menu links */
@@ -61,23 +62,28 @@
 }
 
 .trigger {
-    margin-left: 5%;
+    border-top:0;
+    margin-left: 1.7%;
+    margin-top: 1%;
     border-right: 30px;
     font-size: 25px;
     color: #3a1772;
     transition: all 0.5s;
-    cursor: pointer;
+    width: 50px;
+    height: 50px;
 
 }
 
 .trigger:hover{
     color: #db3a34;
+    cursor: pointer
 }
 
 .zh-dash1,
 .zh-dash2,
 .zh-dash3{
     width:300px;
+    height: 200px;
     margin-right: 20px;
     border-radius: 5px;
     float: left;

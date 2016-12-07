@@ -12,7 +12,7 @@
      <label for="password">Password</label>
      <input type="password" #password class="form-control" id="password" placeholder="Password">
    </div>
-   <button type="submit" class="button btn btn-default">Log In</button>
+   <button type="submit" (click)="showSuccess()" class="button btn btn-default">Log In</button>
    <br>
      <a class='login-link' [routerLink]="['/register']">Don't have an account? Click here to register.</a>
  </form>

@@ -1,6 +1,8 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, ViewContainerRef } from '@angular/core';
 import {AuthService } from './accounts/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AppComponent implements OnInit, OnChanges {
   title = ' Zuhura';
   url: string;
-  constructor(private auth: AuthService, private router:Router, private _routes: ActivatedRoute ){}
+  constructor(private auth: AuthService, private router:Router, private _routes: ActivatedRoute,
+  public toastr: ToastsManager, vRef:ViewContainerRef  ){
+    this.toastr.setRootViewContainerRef(vRef);
+  }
 
 
   ngOnInit() {

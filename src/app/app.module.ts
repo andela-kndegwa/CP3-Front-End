@@ -17,6 +17,7 @@ import { AuthGuard } from './common/auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './accounts/auth.service';
 import {routes} from './bucketlists/bucketlist.routes';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 
 
@@ -40,6 +41,7 @@ import {routes} from './bucketlists/bucketlist.routes';
       { path: 'welcome', component: LandingComponent },
     ]),
     BucketlistsModule,
+    ToastModule
   ],
   providers: [AUTH_PROVIDERS, AuthService],
   bootstrap: [AppComponent]
