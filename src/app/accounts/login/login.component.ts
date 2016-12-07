@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { contentHeaders } from '../../common/headers';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 const template = require('./login.component.html');
 
@@ -15,8 +14,7 @@ export class LoginComponent {
   login_errors = false;
   error: string;
   errors = [];
-  constructor(public router: Router, public http: Http,
-  public toastr: ToastsManager) { }
+  constructor(public router: Router, public http: Http) { }
 
   login(event, username, password) {
     this.errors = [];
@@ -27,7 +25,7 @@ export class LoginComponent {
       response => {
         localStorage.setItem('token', response.json().token);
         this.router.navigate(['/dashboard']);
-        this.showSuccess();
+
       },
       error => {
         this.login_errors = true;
@@ -48,8 +46,4 @@ export class LoginComponent {
     event.preventDefault();
     this.router.navigate(['register']);
   }
-
-  showSuccess() {
-        this.toastr.success('You are awesome!', 'Success!');
-      }
 }

@@ -1,6 +1,7 @@
 .card-block {
   background: #3a1772;
   padding: 40px;
+  width: 26.5%;
   max-width: 800px;
   margin-top: 40px;
   margin: 20px 2px;
@@ -128,16 +129,38 @@ input:focus, textarea:focus {
     letter-spacing: .1em;
 
 }
-
-#wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.create-buck{
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f2cd5d;
+  border-radius: 5px;
 }
 
+.create-buck > h4 {
+  color: #000;
+  line-height: 30px;
+  font-weight: 500;
+  text-align: center;
+
+}
+
+
+/* Style :horizontal line. Am cool like that!*/
+hr { 
+  padding: 0;
+  border: none; 
+  border-top: medium double #3a1772; 
+  color: #db3a34; 
+  text-align: center; 
+  width: 90%;
+} 
+hr:after { 
+  content: "§"; 
+  display: inline-block; 
+  position: relative; 
+  top: -0.7em; 
+  font-size: 1.5em; 
+  padding: 0 0.25em; 
+  background: #fff; 
+}

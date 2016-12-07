@@ -2,20 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { contentHeaders } from '../../common/headers';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
   reg_errors = false;
   error: string;
   // success: string = 'Registeration successful. Please log in to use the service.';
   errors = [];
 
-  constructor(public router: Router, public http: Http) { }
+  constructor(public router: Router, public http: Http,
+    public toastr: ToastsManager) { }
 
 
   register(event, username, email, password) {
@@ -25,7 +27,8 @@ export class RegisterComponent implements OnInit {
     this.http.post('https://zuhura-api.herokuapp.com/api/v1.0/auth/register/', body, { headers: contentHeaders })
       .subscribe(
       response => {
-        this.router.navigate(['login']);;
+        this.router.navigate(['login']);
+        this.showSuccess();
       },
       error => {
         this.reg_errors = true;
@@ -55,6 +58,8 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  showSuccess() {
+    this.toastr.success('Registeration Successful! Please log in to use the service.', 'Success!');
+  }
 
-  ngOnInit() { }
 }

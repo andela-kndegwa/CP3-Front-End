@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { BucketlistsService } from './bucketlists.service';
 
+
 @Component({
     templateUrl: './bucketlist-detail.component.html',
     styleUrls: ['./bucketlist-detail.component.css', '../dashboard/dashboard.component.css']
@@ -21,7 +22,8 @@ export class BucketListDetailComponent implements OnInit {
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
-        private _bucketlistService: BucketlistsService) {
+        private _bucketlistService: BucketlistsService,
+    ) {
 
     }
 

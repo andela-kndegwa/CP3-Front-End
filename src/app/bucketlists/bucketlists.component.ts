@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BucketlistsService } from './bucketlists.service';
 import { IBucketList } from './bucketlist';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 
 
 @Component({
@@ -16,7 +16,8 @@ export class BucketlistsComponent implements OnInit {
   bucketlists: IBucketList[];
   newBucket: string;
 
-  constructor(private _bucketlists: BucketlistsService) { }
+  constructor(private _bucketlists: BucketlistsService
+  , public toastr: ToastsManager) { }
 
   ngOnInit(): void {
     this._bucketlists.getBucketLists().
@@ -28,6 +29,7 @@ export class BucketlistsComponent implements OnInit {
       subscribe(bucketlist => {
         this.newBucket = bucketlist;
         this.bucketlists.push(bucketlist);
+        this.toastr.success('Bucket List Successfully created!', 'Success!');
       },
       error => this.errorMessage = <any>error);
 
