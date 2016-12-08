@@ -9,6 +9,7 @@ import 'rxjs/add/observable/throw';
 import { IBucketList } from './bucketlist';
 import { Item } from './item';
 
+
 @Injectable()
 export class BucketlistsService {
   // property of private nature
@@ -37,8 +38,8 @@ export class BucketlistsService {
       .catch(this.handleError);
   }
   // Api call to update a bucket list
-  updateBucketList(b_id: number, name: string): Observable<any> {
-    return this.http.put(this._bucketlistUrl + b_id + '/', JSON.stringify({ 'name': name }), {
+  updateBucketList(b_id: number, name: string, description: string): Observable<any> {
+    return this.http.put(this._bucketlistUrl + b_id + '/', JSON.stringify({ 'name': name, 'description':description }), {
       headers: this.addHeaders()
     })
       .map(res => res.json());

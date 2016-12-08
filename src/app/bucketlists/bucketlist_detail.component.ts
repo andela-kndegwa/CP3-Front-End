@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs/Subscription';
 import { BucketlistsService } from './bucketlists.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 
 @Component({
@@ -17,12 +18,14 @@ export class BucketListDetailComponent implements OnInit {
     errorMessage: string;
     updatedBucket: string;
     deletedBucket: string;
+    error_b:string;
     private sub: Subscription;
 
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
         private _bucketlistService: BucketlistsService,
+        public toastr: ToastsManager
     ) {
 
     }
@@ -48,11 +51,16 @@ export class BucketListDetailComponent implements OnInit {
         this.pageTitle = 'Bucketlist Detail: ' + message;
     }
     updateBucketList(b_id): void {
-        this._bucketlistService.updateBucketList(this.bucketlist.id, this.bucketlist.name).
+        this._bucketlistService.updateBucketList(this.bucketlist.id, this.bucketlist.name, this.bucketlist.description).
             subscribe(bucketlist => {
                 this.updatedBucket = bucketlist;
+                this.toastr.success('Bucket List Successfully updated!', 'Success!');
             },
-            error => this.errorMessage = <any>error);
+            error => {this.errorMessage = <any>error;
+                console.log(error);
+            this.error_b = error.json();
+            this.toastr.error('Bucket list updated error: '  + this.error_b);
+            });
 
     }
     deleteBucketList(b_id): void {

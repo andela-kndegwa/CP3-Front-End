@@ -35,10 +35,9 @@ export class BucketlistsComponent implements OnInit {
         this.toastr.success('Bucket List Successfully created!', 'Success!');
       },
       error => {
-        this.bucketlist_error = true;
         this.errorMessage = <any>error;
         this.error_b = error.json().name[0];
-        console.log(error.json().name[0]);
+        this.toastr.error('Bucket list name error: '  + this.error_b);
       });
 
   }
