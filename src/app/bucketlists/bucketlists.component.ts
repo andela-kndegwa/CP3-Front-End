@@ -13,8 +13,10 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 export class BucketlistsComponent implements OnInit {
   errorMessage: string;
+  error_b : string;
   bucketlists: IBucketList[];
   newBucket: string;
+  bucketlist_error = false;
 
   constructor(private _bucketlists: BucketlistsService
   , public toastr: ToastsManager) { }
@@ -26,12 +28,18 @@ export class BucketlistsComponent implements OnInit {
   }
   createBucketList(name): void {
     this._bucketlists.createBucketList(name).
-      subscribe(bucketlist => {
+      subscribe(
+        bucketlist => {
         this.newBucket = bucketlist;
         this.bucketlists.push(bucketlist);
         this.toastr.success('Bucket List Successfully created!', 'Success!');
       },
-      error => this.errorMessage = <any>error);
+      error => {
+        this.bucketlist_error = true;
+        this.errorMessage = <any>error;
+        this.error_b = error.json().name[0];
+        console.log(error.json().name[0]);
+      });
 
   }
 }

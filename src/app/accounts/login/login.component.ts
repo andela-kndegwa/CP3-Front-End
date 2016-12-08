@@ -34,7 +34,7 @@ export class LoginComponent {
         if (errorObj.hasOwnProperty('username')) {
           this.errors.push('Username error: ' + errorObj.username[0]);
           console.log('Username error: ' + errorObj.username[0]);
-        }
+}
         if (errorObj.hasOwnProperty('password')) {
           this.errors.push('Error: Password is Required');
         }

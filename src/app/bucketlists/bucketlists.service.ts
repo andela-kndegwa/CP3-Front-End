@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 import { IBucketList } from './bucketlist';
 import { Item } from './item';
@@ -45,7 +46,7 @@ export class BucketlistsService {
   // method to handle errors if any
   private handleError(error: Response) {
     console.log(error);
-    return Observable.throw(error.json().error || 'Server Error');
+    return Observable.throw(error || 'Server Error');
   }
 
   deleteBucketList(b_id: number) {

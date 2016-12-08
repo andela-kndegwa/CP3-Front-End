@@ -34,9 +34,7 @@ export class RegisterComponent {
         this.reg_errors = true;
         this.error = error.json();
         let errorObj = error.json();
-        console.log(errorObj)
         if (errorObj.hasOwnProperty('username')) {
-          this.errors.push(errorObj.username[0]);
           this.errors.push('Username error: ' + errorObj.username[0]);
         }
 

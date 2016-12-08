@@ -1,7 +1,10 @@
 .card-block {
-  background: #3a1772;
+  background: #58355E;
+  overflow: hidden;
   padding: 40px;
+  border: 5px;
   width: 26.5%;
+  height: 450px;
   max-width: 800px;
   margin-top: 40px;
   margin: 20px 2px;
@@ -163,4 +166,11 @@ hr:after {
   font-size: 1.5em; 
   padding: 0 0.25em; 
   background: #fff; 
+}
+
+.zh-alert {
+  background: #db3a34;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
 }
