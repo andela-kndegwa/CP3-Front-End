@@ -68,6 +68,7 @@ export class BucketListDetailComponent implements OnInit {
             subscribe(bucketlist => {
                 this.deletedBucket = bucketlist;
                 this._router.navigate(['/bucketlists']);
+                this.toastr.success('Bucket List Successfully deleted!', 'Success!');
             },
             error => this.errorMessage = <any>error);
     }
