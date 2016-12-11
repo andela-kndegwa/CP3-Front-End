@@ -24,7 +24,7 @@ background-blend-mode: overlay;
 }
 
 .zh-section2 {
-    background-image: url(../../assets/img/bg2.jpeg);
+    background: #f2cd5d;
 
 }
 
@@ -119,9 +119,6 @@ background-blend-mode: overlay;
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
   }
-}
-body {
-  background: black;
 }
 
 .arrow {

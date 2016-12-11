@@ -1,0 +1,282 @@
+.card-block {
+  background: #58355E;
+  overflow: hidden;
+  padding: 40px;
+  border: 5px;
+  width: 70%;
+  height: 40px;
+  max-width: 800px;
+  margin-top: 40px;
+  margin: 20px auto;
+  margin-left:10%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  color: #fff;
+  float: left;
+}
+
+
+h1 {
+  text-align: center;
+  color: #db3a34;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+label {
+    display: none;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #f2cd5d;
+  color: #000;;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #ffffff;
+}
+
+.button {
+  border: 0;
+  display: table-cell;
+  margin-left: auto;
+  outline: none;
+  border-radius: 50px;
+  padding: 15px 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #db3a34;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+
+.single-card > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button:hover, .button:focus {
+  background: #1ab188;
+  padding: 15px 60px;
+  display: visible;
+
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+
+.form-control{
+    color: #000;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+   font-weight: 300;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+   font-weight: 300;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white; 
+   font-weight: 300; 
+}
+
+
+:-ms-input-placeholder {  
+   color: white;  
+   font-weight: 100;
+}
+
+.number{
+    font-size: 8rem;
+    color: #f2cd5d;
+    font-weight: 600;
+    letter-spacing: .1em;
+
+}
+.create-buck{
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f2cd5d;
+  border-radius: 5px;
+}
+
+.create-buck > h4 {
+  color: #000;
+  line-height: 30px;
+  font-weight: 500;
+  text-align: center;
+
+}
+
+
+/* Style :horizontal line. Am cool like that!*/
+hr { 
+  padding: 0;
+  border: none; 
+  border-top: medium double #3a1772; 
+  color: #db3a34; 
+  text-align: center; 
+  width: 90%;
+} 
+hr:after { 
+  content: "§"; 
+  display: inline-block; 
+  position: relative; 
+  top: -0.7em; 
+  font-size: 1.5em; 
+  padding: 0 0.25em; 
+  background: #fff; 
+}
+
+.zh-alert {
+  background: #db3a34;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+}
+
+.field {
+  display:flex;
+  position:relative;
+  margin: 5px auto;
+  width:80%;
+  flex-direction:row;
+}
+
+.field>input[type=text]{
+  display:block;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.field>input[type=text] {
+  flex:1;
+  padding:0.6em;
+  border:3px solid #58355E;
+}
+
+
+/*As understood from W3 Schools.*/
+
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 100px;
+    left: 0;
+    background-color: #f2cd5d; /* Purple*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    opacity: 0.9;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #3a1772;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    width: 90%;
+    transition: margin-left .5s;
+    padding: 20px;
+    margin-left: 5%;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.edit-name{
+    font-size : 15px;
+    margin-left: 10%;
+
+}
+
+.trigger {
+    border-top:0;
+    margin-left: 1.7%;
+    margin-top: 1%;
+    border-right: 30px;
+    font-size: 25px;
+    color: #3a1772;
+    transition: all 0.5s;
+    width: 50px;
+    height: 50px;
+
+}
+
+.trigger:hover{
+    color: #db3a34;
+    cursor: pointer
+}
+
+.zh-body{
+  margin-top: 8%;
+}

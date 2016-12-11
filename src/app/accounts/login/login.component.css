@@ -2,7 +2,7 @@
   background: #f2cd5d;
   padding: 40px;
   max-width: 600px;
-  margin: 40px auto;
+  margin: 10% auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -54,7 +54,7 @@ input:focus, textarea:focus {
 .button {
   border: 0;
   display: table-cell;
-  margin-left: auto;
+  margin-left:auto;
   outline: none;
   border-radius: 50px;
   padding: 15px 50px;

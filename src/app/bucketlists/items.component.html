@@ -1,4 +1,66 @@
-<div class="row">
+<div class="row zh-body">
+<span class="trigger glyphicon glyphicon-align-left" onclick="openNav()"></span>
+
+<!-- Side Navigation -->
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!--<span class='edit-name glyphicon glyphicon-user'>  {{username }}</span>-->
+  <a href="#"><span class = "glyphicon glyphicon-user"></span> Account Owner: {{username}}</a>
+  <a [routerLink]="['/bucketlists']"><span class = "glyphicon glyphicon-list"></span> View Bucketlists</a>
+  <a href="#"><span class = "glyphicon glyphicon-log-out"></span> Log Out</a>
+</div>
+
+<div class="create-buck">
+  <h4> Add Bucket List Item</h4>
+    <form role="form" (submit)="createBucketListItem(b_id, name.value);">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" #name class="form-control" id="name" placeholder="Go Crazy!">
+      </div>
+      <button type="submit" class="button btn btn-default">Create</button>
+    </form>
+</div>
+<hr>
+
+<div class="card-block center-block" *ngFor='let i of item'>
+  <div class="single-card">
+      <span class="number">#{{i.id}}</span>
+      <br>
+      Title : {{i.name}} 
+      {{i.description}} 
+      {{i.created_on}} 
+      {{i.modified_on}} 
+      {{i.is_done }} <br>
+      <a class="button" [routerLink]="['/bucketlist', bucketlist.id ]">
+        Edit <span class="glyphicon glyphicon-pencil"></span></a>
+  
+      
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row">
   <div class="col-md-4">
     <form role="form" (submit)="createBucketListItem(b_id, name.value);">
       <div class="form-group">
@@ -44,4 +106,4 @@
 </div>
 
 <router-outlet></router-outlet>
-
+-->
