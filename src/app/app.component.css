@@ -6,7 +6,6 @@ img {
 .navbar {
     position: fixed;
     margin-top:0;
-    margin-bottom: 0;
     background-color: #db3a34;
     border-radius:0;
     padding: 30px 15px;
@@ -53,5 +52,7 @@ img {
 background-color: #D741A7;
 }
 
-
+#main{
+    margin-top:10%;
+}
 

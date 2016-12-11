@@ -10,7 +10,7 @@ import { BucketListDetailGuard } from './bucketlists-guard.service';
 import { BucketListDetailComponent } from './bucketlist_detail.component';
 import { ItemsComponent } from './items.component';
 import { ItemDetailComponent } from './item-detail.component';
-
+import { BucketlistFilterPipe } from './bucketlist-filter.pipe';
 
 @NgModule({
   imports: [
@@ -22,10 +22,10 @@ import { ItemDetailComponent } from './item-detail.component';
       {path: 'bucketlist/:b_id/item/:item_id', component: ItemDetailComponent, canActivate: [AuthGuard]},
     ]),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
   ],
   providers: [AuthGuard, BucketlistsService, BucketListDetailGuard],
-  declarations: [BucketlistsComponent, BucketListDetailComponent, ItemsComponent, ItemDetailComponent]
+  declarations: [BucketlistsComponent, BucketListDetailComponent, ItemsComponent, ItemDetailComponent, BucketlistFilterPipe]
 })
 export class BucketlistsModule { }

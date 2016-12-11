@@ -8,26 +8,26 @@
   <a href="#"><span class = "glyphicon glyphicon-user"></span> Account Owner: {{username}}</a>
   <a [routerLink]="['/bucketlists']"><span class = "glyphicon glyphicon-list"></span> View Bucketlists</a>
   <a href="#"><span class = "glyphicon glyphicon-log-out"></span> Log Out</a>
+  <br>
+  <div class="field" id="searchform">
+  <input type="text" id="searchterm" placeholder="Search bucketlists ..."
+  [(ngModel)]='listFilter' />
 </div>
-
-
-
+</div>
 <div class="create-buck">
   <h4> Create new bucketlist!</h4>
-    <!--<div class="zh-alert alert-danger" *ngIf="bucketlist_error">
-    <p><span class="glyphicon glyphicon-asterisk"> </span>{{error_b}}</p>
-    </div>-->
     <form role="form" (submit)="createBucketList(name.value);">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" #name class="form-control" id="name" placeholder="My first bucketlist">
+        <input type="text" #name class="form-control" id="name" placeholder="Go Crazy!">
       </div>
       <button type="submit" class="button btn btn-default">Create</button>
     </form>
 </div>
 <hr>
 <!--Test Out-->
-<div class="card-block center-block" *ngFor='let bucketlist of bucketlists'>
+<div class="card-block center-block" *ngFor='let bucketlist of bucketlists | bucketlistFilter:listFilter
+'>
   <div class="single-card">
       <span class="number">#{{bucketlist.id}}</span>
       <br>

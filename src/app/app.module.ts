@@ -39,6 +39,7 @@ import {ToastModule} from 'ng2-toastr/ng2-toastr';
       { path: 'login', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
       { path: 'welcome', component: LandingComponent },
+      { path: '', component: LandingComponent}
     ]),
     BucketlistsModule,
     ToastModule

@@ -8,7 +8,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 @Component({
   selector: 'app-bucketlists',
   templateUrl: './bucketlists.component.html',
-  styleUrls: ['./bucketlists.component.css', '../dashboard/dashboard.component.css']
+  styleUrls: ['./bucketlists.component.css']
 })
 
 export class BucketlistsComponent implements OnInit {
@@ -17,6 +17,7 @@ export class BucketlistsComponent implements OnInit {
   bucketlists: IBucketList[];
   newBucket: string;
   bucketlist_error = false;
+  listFilter: string;
 
   constructor(private _bucketlists: BucketlistsService
   , public toastr: ToastsManager) { }
