@@ -57,7 +57,7 @@ export class BucketListDetailComponent implements OnInit {
                 this.toastr.success('Bucket List Successfully updated!', 'Success!');
             },
             error => {this.errorMessage = <any>error;
-                console.log(error);
+            console.log(error);
             this.error_b = error.json();
             this.toastr.error('Bucket list updated error: '  + this.error_b);
             });

@@ -35,8 +35,8 @@ export class LoginComponent {
                 this.login_errors = true;
                 this.error = error.json();
                 let errorObj = error.json();
-                this.toastr.error(errorObj.non_field_errors[0]);
-                console.log(errorObj.non_field_errors[0]);
+                this.toastr.error(errorObj.non_field_errors);
+                console.log(errorObj.non_field_errors);
                 if (errorObj.hasOwnProperty('username')) {
                     this.errors.push('Username error: ' + errorObj.username[0]);
                     console.log('Username error: ' + errorObj.username[0]);

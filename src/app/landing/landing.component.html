@@ -16,6 +16,13 @@
           </a>
       </div>
     </div>
+     <div class="zh-btn col-xs-6" style="margin-left: 40%;">
+          <div class="">
+        <a *ngIf="auth.loggedIn()" [routerLink]="['/bucketlists']"class="btn wow fadeInLeft">
+              Create bucket list
+          </a>
+      </div>
+     </div>
   </div>
   <!-- end panel -->
   <div class="arrow bounce"></div>
