@@ -38,8 +38,8 @@ export class BucketlistsService {
       .catch(this.handleError);
   }
   // Api call to update a bucket list
-  updateBucketList(b_id: number, name: string, description: string): Observable<any> {
-    return this.http.put(this._bucketlistUrl + b_id + '/', JSON.stringify({ 'name': name, 'description':description }), {
+  updateBucketList(b_id: number, name: string): Observable<any> {
+    return this.http.put(this._bucketlistUrl + b_id + '/', JSON.stringify({ 'name': name }), {
       headers: this.addHeaders()
     })
       .map(res => res.json());
@@ -85,7 +85,7 @@ export class BucketlistsService {
       .map(res => res.json());
   }
 
-  deleteBucketListItem(b_id: number, i_id : number) {
+  deleteBucketListItem(b_id: number, i_id: number) {
     return this.http.delete(this._bucketlistUrl + b_id + '/' + 'items/' + i_id + '/', { headers: this.addHeaders() }
     )
       .map(res => res.json());

@@ -103,23 +103,23 @@ input:focus, textarea:focus {
 }
 
 ::-webkit-input-placeholder {
-   color: white;
+   color: black;
    font-weight: 300;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: white;  
+   color: black;  
    font-weight: 300;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: white; 
+   color: black; 
    font-weight: 300; 
 }
 
 
 :-ms-input-placeholder {  
-   color: white;  
+   color: black;  
    font-weight: 100;
 }
 
@@ -132,4 +132,7 @@ input:focus, textarea:focus {
 }
 input, textarea {
     color: #000;
+}
+.zh-body{
+    margin-top: 8%;
 }

@@ -18,7 +18,8 @@ export class BucketListDetailComponent implements OnInit {
     errorMessage: string;
     updatedBucket: string;
     deletedBucket: string;
-    error_b:string;
+    error_b: string;
+    b_d : string = '';
     private sub: Subscription;
 
     constructor(
@@ -51,15 +52,16 @@ export class BucketListDetailComponent implements OnInit {
         this.pageTitle = 'Bucketlist Detail: ' + message;
     }
     updateBucketList(b_id): void {
-        this._bucketlistService.updateBucketList(this.bucketlist.id, this.bucketlist.name, this.bucketlist.description).
+        this._bucketlistService.updateBucketList(this.bucketlist.id, this.bucketlist.name).
             subscribe(bucketlist => {
                 this.updatedBucket = bucketlist;
                 this.toastr.success('Bucket List Successfully updated!', 'Success!');
             },
-            error => {this.errorMessage = <any>error;
-            console.log(error);
-            this.error_b = error.json();
-            this.toastr.error('Bucket list updated error: '  + this.error_b);
+            error => {
+            this.errorMessage = <any>error;
+                console.log(error);
+                this.error_b = error.json();
+                this.toastr.error('Bucket list updated error: ' + this.error_b);
             });
 
     }
