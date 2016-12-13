@@ -24,11 +24,20 @@ export class BucketlistsService {
       .do(data => console.log('All ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
-  //
+
+  getBucketListsNumber(): Observable<IBucketList[]> {
+    // provide the authentication token here.
+    return this.http.get(this._bucketlistUrl, { headers: this.addHeaders() })
+      .map((response: Response) => <IBucketList[]>response.json())
+      // .do(data => localStorage.setItem('bucketlist_number', data.length.toString()))
+  }
+ 
+   //
   getBucketList(id: number): Observable<IBucketList> {
     return this.getBucketLists()
       .map((bucketlists: IBucketList[]) => bucketlists.find(b => b.id === id));
   }
+
   // Api call to create a bucket list
   createBucketList(name: string) {
     let body = JSON.stringify({ name });
@@ -63,13 +72,12 @@ export class BucketlistsService {
       .catch(this.handleError);
   }
   // Api call to get a bucket list item
-
+  
   getBucketListItem(b_id: number, i_id: number) {
     return this.http.get(this._bucketlistUrl + b_id + '/items/' + i_id + '/', { headers: this.addHeaders() })
       .map((response: Response) => response.json())
-      .do(data => console.log('All ' + JSON.stringify(data)))
-      .catch(this.handleError);
   }
+
   // Api call to create a bucket list item
   createBucketListItem(b_id: number, name: string) {
     let body = JSON.stringify({ name });

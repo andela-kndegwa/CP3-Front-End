@@ -54,7 +54,7 @@ export class ItemsComponent implements OnInit {
             },
             error => this.errorMessage = <any>error);
             console.log(this.errorMessage)
-            this.toastr.error('Bucket list name error');
+            // this.toastr.error('Bucket list name error');
     }
 
 }

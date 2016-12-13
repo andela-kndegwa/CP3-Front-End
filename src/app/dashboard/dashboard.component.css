@@ -89,19 +89,8 @@
     float: left;
     background: #58355E;
     color : #f2cd5d;
-    /*border:2px solid #3a1772;*/
 }
 
-/*.zh-dash1{
-     background: #db3a34;
-}*/
-/*.zh-dash2{
-    border: 2px solid #3a1772;
-}
-
-.zh-dash3{
-    border: 2px solid #db3a34;
-}*/
 
 .number{
     margin-left:10%; 
@@ -114,4 +103,8 @@
  
 .zh-body{
     margin-top: 8%;
+}
+
+.text{
+    color: #58355E;
 }

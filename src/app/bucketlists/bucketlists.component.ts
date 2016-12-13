@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BucketlistsService } from './bucketlists.service';
 import { IBucketList } from './bucketlist';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import 'rxjs/add/operator/do';
 
 
 
@@ -13,34 +14,44 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 export class BucketlistsComponent implements OnInit {
   errorMessage: string;
-  error_b : string;
+  error_b: string;
   bucketlists: IBucketList[];
   newBucket: string;
   bucketlist_error = false;
   listFilter: string;
   username: string = localStorage.getItem('currentUser');
+  b_no: string;
+
 
   constructor(private _bucketlists: BucketlistsService
-  , public toastr: ToastsManager) { }
+    , public toastr: ToastsManager) { }
 
   ngOnInit(): void {
     this._bucketlists.getBucketLists().
-      subscribe(bucketlists => this.bucketlists = bucketlists,
+      subscribe(
+      bucketlists => this.bucketlists = bucketlists,
       error => this.errorMessage = <any>error);
+    this._bucketlists.getBucketListsNumber().
+      subscribe(
+      bucket_number => this.bucketlists.length
+      )
   }
   createBucketList(name): void {
     this._bucketlists.createBucketList(name).
       subscribe(
-        bucketlist => {
+      bucketlist => {
         this.newBucket = bucketlist;
         this.bucketlists.push(bucketlist);
+        this.b_no = this.bucketlists.length.toString();
+        console.log(this.b_no);
+        localStorage.setItem('new_b', this.b_no);
         this.toastr.success('Bucket List Successfully created!', 'Success!');
       },
       error => {
         this.errorMessage = <any>error;
         this.error_b = error.json().name[0];
         console.log(this.errorMessage)
-        this.toastr.error('Bucket list name error: '  + this.error_b);
+        this.toastr.error('Bucket list name error: ' + this.error_b);
       });
 
   }
