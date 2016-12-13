@@ -23,16 +23,13 @@
 </div>
 <hr>
 
-<div class="card-block center-block" *ngFor='let i of item'>
+<div class="zh-container card-block" *ngFor='let i of item'>
   <div class="single-card">
       <span class="number">#{{i.id}}</span>
       <br>
-      Title : {{i.name}} 
-      {{i.description}} 
-      {{i.created_on}} 
-      {{i.modified_on}} 
-      {{i.is_done }} <br>
-      <a class="button" [routerLink]="['/bucketlist', bucketlist.id ]">
+      Title : {{i.name}} <br>
+      Done : {{i.is_done }} <br>
+      <a class="zh-btn button" [routerLink]="['/bucketlist',i.bucketlist,'item', i.id]">
         Edit <span class="glyphicon glyphicon-pencil"></span></a>
   
       

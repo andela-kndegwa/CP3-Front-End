@@ -4,7 +4,7 @@
   padding: 40px;
   border: 5px;
   width: 26.5%;
-  height: 450px;
+  height: 400px;
   max-width: 800px;
   margin-top: 40px;
   margin: 20px 2px;
@@ -61,12 +61,11 @@ input:focus, textarea:focus {
 }
 
 .button {
-  border: 0;
   display: table-cell;
   margin-left: auto;
   outline: none;
   border-radius: 50px;
-  padding: 15px 50px;
+  padding: 10px 20px;
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -85,7 +84,7 @@ input:focus, textarea:focus {
 
 .button:hover, .button:focus {
   background: #1ab188;
-  padding: 15px 60px;
+  padding: 10px 30px;
   display: visible;
 
 }

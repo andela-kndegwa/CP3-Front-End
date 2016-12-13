@@ -35,10 +35,12 @@
       Title : {{bucketlist.name}} <br>
       {{bucketlist.created_on}} <br>
       {{bucketlist.modified_on}} <br>
-      <a [routerLink]="['/bucketlist',bucketlist.id,'items']">Items</a> <br>
+      <!--<a [routerLink]="['/bucketlist',bucketlist.id,'items']">Items</a> <br>-->
       {{bucketlist.owner }} <br>
       <a class="button" [routerLink]="['/bucketlist', bucketlist.id ]">
-        Edit <span class="glyphicon glyphicon-pencil"></span></a>
+        Edit <span class="glyphicon glyphicon-penci"></span></a> 
+      <a class="button" [routerLink]="['/bucketlist',bucketlist.id,'items']">
+        View Items <span class="glyphicon glyphicon-lis"></span></a>
   
       
   </div>

@@ -6,7 +6,7 @@ import { BucketlistsService } from './bucketlists.service'
 
 @Component({
     templateUrl: './item-detail.component.html',
-    styleUrls: ['./item-detail.component.css']
+    styleUrls: ['./item-detail.component.css', '../dashboard/dashboard.component.css']
 
 
 })
