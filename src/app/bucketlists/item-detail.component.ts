@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from './item';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BucketlistsService } from './bucketlists.service'
+import { BucketlistsService } from './bucketlists.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
     templateUrl: './item-detail.component.html',
@@ -20,7 +21,8 @@ export class ItemDetailComponent implements OnInit {
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
-        private _bucketlistService: BucketlistsService
+        private _bucketlistService: BucketlistsService,
+        public toastr: ToastsManager
     ) { }
 
     ngOnInit(): void {
@@ -43,6 +45,7 @@ export class ItemDetailComponent implements OnInit {
         this._bucketlistService.updateBucketListItem(this.item.bucketlist, this.item.id, this.item.name, this.item.is_done).
             subscribe(item => {
                 this.updatedBucketItem = item;
+                this.toastr.success('Item Successfully updated!', 'Success!');
             },
             error => this.errorMessage = <any>error);
 

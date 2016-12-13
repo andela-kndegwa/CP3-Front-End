@@ -3,6 +3,8 @@ import { BucketlistsService } from './bucketlists.service';
 import { IBucketList } from './bucketlist';
 import { Item } from './item';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 
 import { Subscription } from 'rxjs/Subscription';
 
@@ -15,6 +17,7 @@ export class ItemsComponent implements OnInit {
     item: Item[];
     i: Item;
     errorMessage: string;
+    error_b : string;
     bucketlist: IBucketList = new IBucketList;
     currentBucketListId: number;
     newItem: string;
@@ -25,7 +28,8 @@ export class ItemsComponent implements OnInit {
     constructor(
         private items: BucketlistsService,
         private router: Router,
-        private _route: ActivatedRoute) { }
+        private _route: ActivatedRoute,
+        public toastr: ToastsManager) { }
 
     ngOnInit(): void {
         this.sub = this._route.params.subscribe(
@@ -46,8 +50,11 @@ export class ItemsComponent implements OnInit {
             subscribe(item => {
                 this.newItem = item;
                 this.item.push(item);
+                this.toastr.success('Item Successfully created!', 'Success!');
             },
             error => this.errorMessage = <any>error);
+            console.log(this.errorMessage)
+            this.toastr.error('Bucket list name error');
     }
 
 }
