@@ -61,6 +61,7 @@ input:focus, textarea:focus {
 }
 
 .button {
+  margin-top: 10px;
   display: table-cell;
   margin-left: auto;
   outline: none;
@@ -130,6 +131,17 @@ input:focus, textarea:focus {
     font-weight: 600;
     letter-spacing: .1em;
 
+}
+
+.letters{
+  font-size: 1.5rem;
+  letter-spacing: .1em;
+}
+
+.zh-value{
+  font-size: 1.5rem;
+  letter-spacing: .1em;
+  color: #f2cd5d;
 }
 .create-buck{
   width: 400px;

@@ -20,19 +20,22 @@
         <div class='row'>
             <div class='col-md-6'>
                 <div class='row'>
-                    <div class='col-md-3'>Name:</div>
-                    <div class='col-md-6'>{{bucketlist.name}}</div>
+                    <div class='letters col-md-3'>Name:</div>
+                    <div class='zh-value col-md-6'>{{bucketlist.name}}</div>
+                </div>
+            <div class='row'>
+                    <div class='letters col-md-6'>Created on :</div>
+                    <div class='zh-value col-md-8'>{{bucketlist.created_on}}</div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-3'>Created on</div>
-                    <div class='col-md-6'>{{bucketlist.created_on}}</div>
-                </div>
-                <div class='row'>
-                    <div class='col-md-3'>Modified On</div>
-                    <div class='col-md-6'>{{bucketlist.modified_on}}</div>
+                    <div class='letters col-md-6'>Modified On :</div>
+                    <div class=' zh-value col-md-8'>{{bucketlist.modified_on}}</div>
                 </div>
             </div>
         </div>
+        <br>
+    <a class="zh-btn button" [routerLink]="['/bucketlist',bucketlist.id,'items']">
+        View Items <span class="glyphicon glyphicon-lis"></span></a>
 </div>
 
 <div class="row">

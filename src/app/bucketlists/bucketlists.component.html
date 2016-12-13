@@ -32,11 +32,11 @@
   <div class="single-card">
       <span class="number">#{{bucketlist.id}}</span>
       <br>
-      Title : {{bucketlist.name}} <br>
-      {{bucketlist.created_on}} <br>
-      {{bucketlist.modified_on}} <br>
-      <!--<a [routerLink]="['/bucketlist',bucketlist.id,'items']">Items</a> <br>-->
-      {{bucketlist.owner }} <br>
+      <span class="letters">Name </span>: <span class="zh-value"> {{bucketlist.name}} </span><br>
+      <span class="letters">Date Created</span>: <span class="zh-value">{{bucketlist.created_on}}</span> <br>
+      <span class="letters">Date Modified</span>: <span class="zh-value">{{bucketlist.modified_on}}</span> <br>
+      <span class="letters">Owner </span>: <span class="zh-value"> {{bucketlist.owner}} </span><br>
+      <br>
       <a class="button" [routerLink]="['/bucketlist', bucketlist.id ]">
         Edit <span class="glyphicon glyphicon-penci"></span></a> 
       <a class="button" [routerLink]="['/bucketlist',bucketlist.id,'items']">

@@ -27,8 +27,8 @@
   <div class="single-card">
       <span class="number">#{{i.id}}</span>
       <br>
-      Title : {{i.name}} <br>
-      Done : {{i.is_done }} <br>
+       <span class="letters">Item Name</span>: <span class="zh-value"> {{i.name}} </span><br>
+      <span class="letters">Is Done</span>: <span class="zh-value">{{i.is_done}}</span> <br>
       <a class="zh-btn button" [routerLink]="['/bucketlist',i.bucketlist,'item', i.id]">
         Edit <span class="glyphicon glyphicon-pencil"></span></a>
   
@@ -46,61 +46,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="row">
-  <div class="col-md-4">
-    <form role="form" (submit)="createBucketListItem(b_id, name.value);">
-      <div class="form-group">
-        <label for="name">Item Name</label>
-        <input type="text" #name class="form-control" id="name" placeholder="My first item">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-  </div>
-</div>
-<div class='panel panel-primary'>
-  <div class='panel-heading'>
-    Items
-  </div>
-  <div class='panel-body'>
-    <div class="row">
-      <div class="col-md-4">
-      </div>
-    </div>
-    <div class='table-responsive'>
-      <table class='table'>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Date Created</th>
-            <th>Date Modified</th>
-            <th>Done</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let i of item '>
-            <td><a [routerLink]="['/bucketlist',i.bucketlist,'item', i.id]">{{i.name}}</a></td>
-            <td>{{i.description}}</td>
-            <td>{{i.created_on }}</td>
-            <td>{{i.modified_on }}</td>
-            <td>{{i.is_done }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<router-outlet></router-outlet>
--->

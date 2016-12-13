@@ -13,31 +13,31 @@
 <span class="trigger glyphicon glyphicon-align-left" onclick="openNav()"></span>
 <br>
 
-<div class='card-block centre block' *ngIf='item'>
+<div class='card-block' *ngIf='item'>
     <div class='panel-heading' style='font-size:large'>
         Title : {{item.name}}
     </div>
         <div class='row'>
             <div class='col-md-6'>
             <div class='row'>
-                    <div class='col-md-3'>Name:</div>
-                    <div class='col-md-6'>{{item.name}}</div>
+                    <div class='letters col-md-3'>Name:</div>
+                    <div class='zh-value col-md-6'>{{item.name}}</div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-3'>Description:</div>
-                    <div class='col-md-6'>{{item.description}}</div>
+                    <div class='letters col-md-3'>Description:</div>
+                    <div class='zh-value col-md-6'>{{item.description}}</div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-3'>Created on</div>
-                    <div class='col-md-6'>{{item.created_on}}</div>
+                    <div class='letters col-md-3'>Created on:</div>
+                    <div class='zh-value col-md-6'>{{item.created_on | date:'medium'}}</div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-3'>Modified On</div>
-                    <div class='col-md-6'>{{item.modfied_on}}</div>
+                    <div class='letters col-md-3'>Modified On:</div>
+                    <div class='zh-value col-md-6'>{{item.modified_on | date:'medium' }}</div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-3'>Status:</div>
-                    <div class='col-md-6'>{{item.is_done}}</div>
+                    <div class='letters col-md-3'>Done:</div>
+                    <div class='zh-value col-md-6'>{{item.is_done}}</div>
                 </div>
             </div>
         </div>
@@ -52,8 +52,8 @@
         <input type="text" name="name" [(ngModel)]="item.name">
       </div>
         <div class="form-group">
-        <label for="name">Status</label>
-        <input type="text" name="is_done" [(ngModel)]="item.is_done">
+        <label  class="form-check-inline" for="name">Status</label>
+        Done: <input type="checkbox" name="is_done" [(ngModel)]="item.is_done">
       </div>
       <button type="submit" class="button btn-default">Edit</button>
       <button type="submit" (click)="deleteBucketListItem(b_id, item_id)" class="button btn-default">Delete</button> 

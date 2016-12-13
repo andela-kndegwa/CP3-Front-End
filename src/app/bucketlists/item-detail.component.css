@@ -137,3 +137,12 @@ input, textarea {
 .zh-body{
     margin-top: 8%;
 }
+
+.letters{
+  font-size: 1.4rem;
+}
+
+.zh-value{
+  font-size: 1.4rem;
+  color: #f2cd5d;
+}
