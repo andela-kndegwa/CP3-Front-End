@@ -22,6 +22,9 @@ export class ItemsComponent implements OnInit {
     currentBucketListId: number;
     newItem: string;
     updatedItem: string;
+    parentBucketlist: IBucketList;
+    pb: string;
+
     // console.log(bucketlist);
     private sub: Subscription;
 
@@ -37,6 +40,7 @@ export class ItemsComponent implements OnInit {
                 let b_id = +params['id'];
                 this.currentBucketListId = b_id;
                 this.getBucketListItems(b_id);
+                this.getParentBucketList(b_id);
             });
     }
     getBucketListItems(id: number) {
@@ -57,11 +61,25 @@ export class ItemsComponent implements OnInit {
                 this.errorMessage = <any>error;
                 let errorObj = error.json();
                 this.toastr.error(errorObj[0]);
-                if (errorObj.hasOwnProperty('name')){
+                if (errorObj.hasOwnProperty('name')) {
                     this.toastr.error('Item name error: ' + errorObj.name[0])
 
                 }
             });
 
-}
+    }
+    onBack(): void {
+        this.router.navigate(['/bucketlists']);
+    }
+
+    getParentBucketList(b_id: number): void {
+        this.items.getBucketList(b_id).
+            subscribe(
+            parentId => {
+                this.parentBucketlist = parentId;
+                this.pb = this.parentBucketlist.name;
+            }
+            )
+    }
+
 }

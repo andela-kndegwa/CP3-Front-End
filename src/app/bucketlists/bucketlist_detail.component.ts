@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IBucketList } from './bucketlist';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { Subscription } from 'rxjs/Subscription';
 import { BucketlistsService } from './bucketlists.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';

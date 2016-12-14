@@ -12,7 +12,7 @@
 </div>
 
 <div class="create-buck">
-  <h4> Add Bucket List Item</h4>
+  <h4> Add Item to Bucket List:{{pb}}</h4>
     <form role="form" (submit)="createBucketListItem(b_id, iname.value); iname.reset()">
       <div class="form-group">
         <label for="name">Name</label>
@@ -37,6 +37,9 @@
   </div>
 </div>
 </div>
+
+<a class="zh-back btn btn-default" (click)=onBack()>
+    <span class="glyphicon glyphicon-chevron-left"></span> Back</a>
 
 
 

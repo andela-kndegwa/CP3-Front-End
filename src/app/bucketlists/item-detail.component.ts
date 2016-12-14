@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BucketlistsService } from './bucketlists.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { IBucketList } from './bucketlist';
 
 @Component({
     templateUrl: './item-detail.component.html',
@@ -16,6 +17,8 @@ export class ItemDetailComponent implements OnInit {
     errorMessage: string;
     updatedBucketItem: string;
     deletedBucketItem: string;
+    parentBucketlist: IBucketList;
+    pb: string;
     public sub: Subscription;
 
     constructor(
@@ -28,9 +31,11 @@ export class ItemDetailComponent implements OnInit {
     ngOnInit(): void {
         this.sub = this._route.params.subscribe(
             params => {
-                let b_id = +params['b_id'];
+                var b_id = +params['b_id'];
                 let item_id = +params['item_id'];
                 this.getBucketListItem(b_id, item_id);
+                this.getParentBucketList(b_id);
+                console.log(b_id);
             });
 
     }
@@ -58,6 +63,16 @@ export class ItemDetailComponent implements OnInit {
             },
             error => this.errorMessage = <any>error);
 
+    }
+
+    getParentBucketList(b_id: number): void {
+        this._bucketlistService.getBucketList(b_id).
+            subscribe(
+            parentId => {
+                this.parentBucketlist = parentId;
+                this.pb = this.parentBucketlist.name;
+            }
+            )
     }
 
 }

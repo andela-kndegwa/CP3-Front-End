@@ -23,8 +23,9 @@ export class BucketlistsComponent implements OnInit {
   b_no: string;
 
 
-  constructor(private _bucketlists: BucketlistsService
-    , public toastr: ToastsManager) { }
+  constructor(
+    private _bucketlists: BucketlistsService,
+    public toastr: ToastsManager) { }
 
   ngOnInit(): void {
     this._bucketlists.getBucketLists().

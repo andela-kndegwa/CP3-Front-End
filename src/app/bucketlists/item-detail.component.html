@@ -35,6 +35,10 @@
                     <div class='letters col-md-3'>Done:</div>
                     <div class='zh-value col-md-6'>{{item.is_done}}</div>
                 </div>
+                <div class='row'>
+                    <span class='letters col-md-3'>Bucket List:</span>
+                    <span class='zh-value col-md-6'>{{pb}}</span>
+                </div>
             </div>
         </div>
 </div>
@@ -56,3 +60,13 @@
     </form>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-4">
+    <form role="form" (submit)="getParentBucketList(b_id)">
+      <button type="submit" class="button btn-default">Get</button>
+    </form>
+  </div>
+</div>
+
+

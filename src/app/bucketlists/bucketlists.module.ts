@@ -12,6 +12,7 @@ import { ItemsComponent } from './items.component';
 import { ItemDetailComponent } from './item-detail.component';
 import { BucketlistFilterPipe } from './bucketlist-filter.pipe';
 
+
 @NgModule({
   imports: [
     CommonModule,
