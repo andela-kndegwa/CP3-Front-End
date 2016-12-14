@@ -49,8 +49,8 @@ export class BucketlistsComponent implements OnInit {
       },
       error => {
         this.errorMessage = <any>error;
-        let errorObj = error.json()
-        this.toastr.error(errorObj[0])
+        let errorObj = error.json();
+        this.toastr.error(errorObj[0]);
         if (errorObj.hasOwnProperty('name')) {
           this.toastr.error('Bucket list name error: ' + errorObj.name[0]);
         }

@@ -17,7 +17,7 @@ export class ItemsComponent implements OnInit {
     item: Item[];
     i: Item;
     errorMessage: string;
-    error_b : string;
+    error_b: string;
     bucketlist: IBucketList = new IBucketList;
     currentBucketListId: number;
     newItem: string;
@@ -47,14 +47,21 @@ export class ItemsComponent implements OnInit {
     }
     createBucketListItem(b_id, name): void {
         this.items.createBucketListItem(this.currentBucketListId, name).
-            subscribe(item => {
+            subscribe(
+            item => {
                 this.newItem = item;
                 this.item.push(item);
                 this.toastr.success('Item Successfully created!', 'Success!');
             },
-            error => this.errorMessage = <any>error);
-            console.log(this.errorMessage)
-            // this.toastr.error('Bucket list name error');
-    }
+            error => {
+                this.errorMessage = <any>error;
+                let errorObj = error.json();
+                this.toastr.error(errorObj[0]);
+                if (errorObj.hasOwnProperty('name')){
+                    this.toastr.error('Item name error: ' + errorObj.name[0])
 
+                }
+            });
+
+}
 }
