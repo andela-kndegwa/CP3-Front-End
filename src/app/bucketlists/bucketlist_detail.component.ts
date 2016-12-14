@@ -58,9 +58,11 @@ export class BucketListDetailComponent implements OnInit {
             },
             error => {
             this.errorMessage = <any>error;
-                console.log(error);
-                this.error_b = error.json();
-                this.toastr.error('Bucket list updated error: ' + this.error_b);
+            let errorObj = error.json();
+            this.toastr.error(errorObj[0]);
+            if (errorObj.hasOwnProperty('name')){
+                this.toastr.error('Bucket list name error: ' + errorObj.name[0]);
+            }
             });
 
     }

@@ -52,7 +52,15 @@ export class ItemDetailComponent implements OnInit {
                 this.updatedBucketItem = item;
                 this.toastr.success('Item Successfully updated!', 'Success!');
             },
-            error => this.errorMessage = <any>error);
+            error => 
+            {
+                this.errorMessage = <any>error;
+                let errorObj = error.json();
+                this.toastr.error(errorObj[0]);
+                if (errorObj.hasOwnProperty('name')){
+                    this.toastr.error('Item name error'+ errorObj.name[0]);
+                }
+            });
 
     }
     deleteBucketListItem(b_id: number, item_id: number): void {
