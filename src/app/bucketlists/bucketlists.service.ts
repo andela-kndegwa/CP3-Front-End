@@ -21,7 +21,7 @@ export class BucketlistsService {
     // provide the authentication token here.
     return this.http.get(this._bucketlistUrl, { headers: this.addHeaders() })
       .map((response: Response) => <IBucketList[]>response.json())
-      .do(data => console.log('All ' + JSON.stringify(data)))
+      .do(data => 'All ' + JSON.stringify(data))
       .catch(this.handleError);
   }
 
@@ -55,7 +55,7 @@ export class BucketlistsService {
   }
   // method to handle errors if any
   private handleError(error: Response) {
-    console.log(error);
+    // console.log(error.text());
     return Observable.throw(error || 'Server Error');
   }
 

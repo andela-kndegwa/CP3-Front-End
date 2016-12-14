@@ -1,5 +1,5 @@
 <div class="zh-body">
-<span class="trigger glyphicon glyphicon-align-left" onclick="openNav()"></span>
+<span class="trigger glyphicon glyphicon-align-justify" onclick="openNav()"></span>
 
 <!-- Side Navigation -->
 
@@ -17,18 +17,17 @@
 </div>
 <div class="create-buck">
   <h4> Create new bucketlist!</h4>
-    <form role="form" (submit)="createBucketList(name.value);">
+    <form role="form" (submit)="createBucketList(name.value); bname.reset()">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" #name class="form-control" id="name" placeholder="Go Crazy!">
+        <input [ngModel]="model" name='bname' #bname="ngModel" type="text" #name class="form-control" id="name" placeholder="Go Crazy!">
       </div>
       <button type="submit" class="button btn btn-default">Create</button>
     </form>
 </div>
 <hr>
 <!--Test Out-->
-<div class="card-block center-block" *ngFor='let bucketlist of bucketlists | bucketlistFilter:listFilter
-'>
+<div class="card-block center-block" *ngFor='let bucketlist of bucketlists | bucketlistFilter:listFilter'>
   <div class="single-card">
       <span class="number">#{{bucketlist.id}}</span>
       <br>
@@ -41,8 +40,6 @@
         Edit <span class="glyphicon glyphicon-penci"></span></a> 
       <a class="button" [routerLink]="['/bucketlist',bucketlist.id,'items']">
         View Items <span class="glyphicon glyphicon-lis"></span></a>
-  
-      
-  </div>
+ </div>
 </div>
 </div>

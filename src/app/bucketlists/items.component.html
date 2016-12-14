@@ -1,5 +1,5 @@
 <div class="row zh-body">
-<span class="trigger glyphicon glyphicon-align-left" onclick="openNav()"></span>
+<span class="trigger glyphicon glyphicon-align-justify" onclick="openNav()"></span>
 
 <!-- Side Navigation -->
 
@@ -13,10 +13,11 @@
 
 <div class="create-buck">
   <h4> Add Bucket List Item</h4>
-    <form role="form" (submit)="createBucketListItem(b_id, name.value);">
+    <form role="form" (submit)="createBucketListItem(b_id, iname.value); iname.reset()">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" #name class="form-control" id="name" placeholder="Go Crazy!">
+        <!--<input type="text" #name class="form-control" id="name" placeholder="Go Crazy!">-->
+        <input [ngModel]="model" name='iname' #iname="ngModel" type="text" #name class="form-control" id="name" placeholder="Go Crazy!">
       </div>
       <button type="submit" class="button btn btn-default">Create</button>
     </form>

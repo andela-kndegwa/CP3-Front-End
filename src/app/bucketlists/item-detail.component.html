@@ -10,7 +10,7 @@
 
 <!-- Use any element to open the sidenav -->
 <div class="zh-body">
-<span class="trigger glyphicon glyphicon-align-left" onclick="openNav()"></span>
+<span class="trigger glyphicon glyphicon-align-justify" onclick="openNav()"></span>
 <br>
 
 <div class='card-block' *ngIf='item'>
@@ -22,11 +22,7 @@
             <div class='row'>
                     <div class='letters col-md-3'>Name:</div>
                     <div class='zh-value col-md-6'>{{item.name}}</div>
-                </div>
-                <div class='row'>
-                    <div class='letters col-md-3'>Description:</div>
-                    <div class='zh-value col-md-6'>{{item.description}}</div>
-                </div>
+                </div> 
                 <div class='row'>
                     <div class='letters col-md-3'>Created on:</div>
                     <div class='zh-value col-md-6'>{{item.created_on | date:'medium'}}</div>
